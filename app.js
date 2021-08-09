@@ -45,9 +45,9 @@ function allDateFormate(date) {
     var ddmmyyyy = dateString.day + dateString.month + dateString.year;
     var mmddyyyy = dateString.month + dateString.day + dateString.year;
     var yyyymmdd = dateString.year + dateString.month + dateString.day
-    var ddmmyy = dateString.day + dateString.month + dateString.year.slice(-2)
-    var mmddyy = dateString.month + dateString.day + dateString.year.slice(-2)
-    var yymmdd = dateString.year.slice(-2) + dateString.month + dateString.day;
+    var ddmmyy = dateString.day + dateString.month + dateString.year.substring(2)
+    var mmddyy = dateString.month + dateString.day + dateString.year.substring(2)
+    var yymmdd = dateString.year.substring(2) + dateString.month + dateString.day;
 
     return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd]
 
