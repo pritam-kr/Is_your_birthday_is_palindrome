@@ -65,26 +65,6 @@ function checkPalindromeForAllFormate(date) {
     return flag;
 }
 
-
-
-// function checkPalindromeForAllFormate(el, e) {
-//     var listOfPalindrome = el
-//     var nextDays = e
-
-//     for (i = 0; i < listOfPalindrome.length; i++) {
-//         if (listOfPalindrome[i] === reverseString(listOfPalindrome[i])) {
-//             message = `<p class="result">Wow! Your birthdate is palindrome.</p>`;
-//             document.querySelector(".output").innerHTML = message;
-//             break;
-//         } else {
-//             getNextPalindrome(e[2], e[1], e[0])
-//             message = `<p class="result"> Ohh! Sorry, your birth date is not palindrome.</p>`;
-//             document.querySelector(".output").innerHTML = message;
-//         }
-//     }
-
-// }
-
 //checking leapyear
 function leapYear(year) {
     if (year % 400 === 0) {
@@ -169,44 +149,28 @@ function clickHandler(e) {
             month: Number(bdydate[1]),
             year: Number(bdydate[0])
         }
+
         //check palindrome
         var isPalindrome = checkPalindromeForAllFormate(date);
 
         if (isPalindrome === true) {
             document.querySelector(".output").innerHTML = `<img src="2.gif" style="width: 90px;" />`;
-            setTimeout(() => {isPalindromeMessage()}, 3000);
+            setTimeout(() => { isPalindromeMessage() }, 3000);
 
-        }else{
-           var [counter, nextdate] = getNextPalindromeDate(date)
-           document.querySelector(".output").innerHTML = `<img src="2.gif" style="width: 90px;" />`;
-           setTimeout(() => {notPalindromeMessage(counter, nextdate)}, 3000);
+        } else {
+            var [counter, nextdate] = getNextPalindromeDate(date)
+            document.querySelector(".output").innerHTML = `<img src="2.gif" style="width: 90px;" />`;
+            setTimeout(() => { notPalindromeMessage(counter, nextdate) }, 3000);
         }
     }
 }
 
-    // const dateString = reverseString(dateValue)
-    // if (dateValue) {
-    //     document.querySelector(
-    //         ".output"
-    //     ).innerHTML = `<img src="2.gif" style="width: 90px;" />`;
-    //     setTimeout(() => {
-    //         allDateFormate(dateValue);
-    //     }, 3000);
-    // } else {
-    //     document.querySelector(
-    //         ".output"
-    //     ).innerHTML = `<p class="result">Date field can not blank.</p>`;
-    // }
-    // allDateFormate(dateValue)
-
-
-    function isPalindromeMessage(){
-            message = `<p class="result">Wow! Your birthdate is palindrome.</p>`;
-            document.querySelector(".output").innerHTML = message;
-    }
-
-    function notPalindromeMessage(c, n){
-        console.log(n)
-        message = `<p class="result"> Ohh! Sorry, your birth date is not palindrome. And next palindrome date is ${n.day}-${n.month}-${n.year} and missed it by ${c} days.`;
+function isPalindromeMessage() {
+    message = `<p class="result">Wow! Your birthdate is palindrome.</p>`;
     document.querySelector(".output").innerHTML = message;
-    }
+}
+
+function notPalindromeMessage(c, n) {
+    message = `<p class="result"> Ohh! Sorry, your birth date is not palindrome. And next palindrome date is ${n.day}-${n.month}-${n.year} and missed it by ${c} days.`;
+    document.querySelector(".output").innerHTML = message;
+}
