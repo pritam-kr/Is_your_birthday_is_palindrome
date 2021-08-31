@@ -64,7 +64,7 @@ function checkPalindromeForAllFormate(date) {
 //checking leapyear
 function leapYear(year) {
     if (year % 400 === 0) {
-        return trur
+        return true
     }
     if (year % 100 === 0) {
         return false
@@ -136,7 +136,7 @@ function clickHandler(e) {
     e.preventDefault();
 
     const dateValue = inputDate.value;
-    
+
     if (dateValue) {
         var bdydate = dateValue.split('-')
 
@@ -147,7 +147,7 @@ function clickHandler(e) {
         }
 
         //check palindrome
-        var isPalindrome = checkPalindromeForAllFormate(date);
+        var isPalindrome = checkPalindromeForAllFormate(date); 
 
         if (isPalindrome === true) {
             document.querySelector(".output").innerHTML = `<img src="2.gif" style="width: 90px;" />`;
