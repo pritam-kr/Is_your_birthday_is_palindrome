@@ -70,7 +70,7 @@ function leapYear(year) {
         return false
     }
     if (year % 4 === 0) {
-        return false
+        return true
     }
     return false;
 }
@@ -90,7 +90,7 @@ function findNextDate(date) {
         } else {
             if (day > 28) {
                 day = 1;
-                month++
+               month++;
             }
         }
     }
@@ -140,7 +140,7 @@ function clickHandler(e) {
     if (dateValue) {
         var bdydate = dateValue.split('-')
 
-        var date = {
+        var date = { 
             day: Number(bdydate[2]),
             month: Number(bdydate[1]),
             year: Number(bdydate[0])
